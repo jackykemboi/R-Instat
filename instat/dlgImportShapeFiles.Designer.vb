@@ -28,6 +28,7 @@ Partial Class dlgImportShapeFiles
         Me.ucrSaveDataframeName = New instat.ucrSave()
         Me.ucrBase = New instat.ucrButtons()
         Me.ucrInputFilePath = New instat.ucrInputTextBox()
+        Me.ucrChkSplitGeometry = New instat.ucrCheck()
         Me.SuspendLayout()
         '
         'lblFile
@@ -87,11 +88,21 @@ Partial Class dlgImportShapeFiles
         Me.ucrInputFilePath.Size = New System.Drawing.Size(395, 35)
         Me.ucrInputFilePath.TabIndex = 1
         '
+        'ucrChkSplitGeometry
+        '
+        Me.ucrChkSplitGeometry.Checked = False
+        Me.ucrChkSplitGeometry.Location = New System.Drawing.Point(469, 140)
+        Me.ucrChkSplitGeometry.Margin = New System.Windows.Forms.Padding(6, 8, 6, 8)
+        Me.ucrChkSplitGeometry.Name = "ucrChkSplitGeometry"
+        Me.ucrChkSplitGeometry.Size = New System.Drawing.Size(150, 31)
+        Me.ucrChkSplitGeometry.TabIndex = 6
+        '
         'dlgImportShapeFiles
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(634, 254)
+        Me.Controls.Add(Me.ucrChkSplitGeometry)
         Me.Controls.Add(Me.ucrSaveDataframeName)
         Me.Controls.Add(Me.cmdLibrary)
         Me.Controls.Add(Me.ucrBase)
@@ -116,4 +127,5 @@ Partial Class dlgImportShapeFiles
     Friend WithEvents ucrBase As ucrButtons
     Friend WithEvents cmdLibrary As Button
     Friend WithEvents ucrSaveDataframeName As ucrSave
+    Friend WithEvents ucrChkSplitGeometry As ucrCheck
 End Class
