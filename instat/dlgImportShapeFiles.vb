@@ -53,6 +53,8 @@ Public Class dlgImportShapeFiles
         ucrSaveDataframeName.SetLabelText("Dataframe Name:")
 
         ucrChkSplitGeometry.SetText("Split Geometry")
+        ucrChkSplitGeometry.AddParameterPresentCondition(True, "mutate")
+        ucrChkSplitGeometry.AddParameterPresentCondition(False, "mutate", False)
 
     End Sub
 
@@ -65,6 +67,7 @@ Public Class dlgImportShapeFiles
         clsPipeOperator = New ROperator
 
         ucrSaveDataframeName.SetName("")
+        ucrInputFilePath.SetName("")
 
         clsReadShapeFiles.SetPackageName("sf")
         clsReadShapeFiles.SetRCommand("st_read")
@@ -131,7 +134,9 @@ Public Class dlgImportShapeFiles
 
     Private Sub SetRCodeForControls(bReset As Boolean)
         ucrSaveDataframeName.SetRCode(clsDummyRcode, bReset)
+        'If bReset Then
         ucrChkSplitGeometry.SetRCode(clsDummyRcode, bReset)
+        'End If
     End Sub
 
     Private Sub TestOkEnabled()
@@ -151,6 +156,14 @@ Public Class dlgImportShapeFiles
 
     Private Sub cmdBrowse_Click(sender As Object, e As EventArgs) Handles cmdBrowse.Click
         GetFileFromOpenDialog()
+    End Sub
+
+    Private Sub ucrSaveDataframeName_Load(sender As Object, e As EventArgs) Handles ucrSaveDataframeName.Load
+
+    End Sub
+
+    Private Sub lblFile_Click(sender As Object, e As EventArgs) Handles lblFile.Click
+
     End Sub
 
     Private Sub ucrBase_ClickReset(sender As Object, e As EventArgs) Handles ucrBase.ClickReset
