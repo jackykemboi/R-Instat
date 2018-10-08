@@ -28,12 +28,13 @@ Partial Class dlgImportShapeFiles
         Me.ucrSaveDataframeName = New instat.ucrSave()
         Me.ucrBase = New instat.ucrButtons()
         Me.ucrInputFilePath = New instat.ucrInputTextBox()
+        Me.ucrChkSplitGeometry = New instat.ucrCheck()
         Me.SuspendLayout()
         '
         'lblFile
         '
         Me.lblFile.AutoSize = True
-        Me.lblFile.Location = New System.Drawing.Point(37, 32)
+        Me.lblFile.Location = New System.Drawing.Point(10, 32)
         Me.lblFile.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblFile.Name = "lblFile"
         Me.lblFile.Size = New System.Drawing.Size(38, 20)
@@ -42,7 +43,7 @@ Partial Class dlgImportShapeFiles
         '
         'cmdBrowse
         '
-        Me.cmdBrowse.Location = New System.Drawing.Point(494, 28)
+        Me.cmdBrowse.Location = New System.Drawing.Point(479, 28)
         Me.cmdBrowse.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.cmdBrowse.Name = "cmdBrowse"
         Me.cmdBrowse.Size = New System.Drawing.Size(112, 35)
@@ -52,7 +53,7 @@ Partial Class dlgImportShapeFiles
         '
         'cmdLibrary
         '
-        Me.cmdLibrary.Location = New System.Drawing.Point(494, 92)
+        Me.cmdLibrary.Location = New System.Drawing.Point(479, 92)
         Me.cmdLibrary.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.cmdLibrary.Name = "cmdLibrary"
         Me.cmdLibrary.Size = New System.Drawing.Size(112, 35)
@@ -62,7 +63,7 @@ Partial Class dlgImportShapeFiles
         '
         'ucrSaveDataframeName
         '
-        Me.ucrSaveDataframeName.Location = New System.Drawing.Point(37, 92)
+        Me.ucrSaveDataframeName.Location = New System.Drawing.Point(10, 92)
         Me.ucrSaveDataframeName.Margin = New System.Windows.Forms.Padding(6, 8, 6, 8)
         Me.ucrSaveDataframeName.Name = "ucrSaveDataframeName"
         Me.ucrSaveDataframeName.Size = New System.Drawing.Size(405, 37)
@@ -70,28 +71,38 @@ Partial Class dlgImportShapeFiles
         '
         'ucrBase
         '
-        Me.ucrBase.Location = New System.Drawing.Point(22, 154)
+        Me.ucrBase.Location = New System.Drawing.Point(10, 182)
         Me.ucrBase.Margin = New System.Windows.Forms.Padding(6, 8, 6, 8)
         Me.ucrBase.Name = "ucrBase"
         Me.ucrBase.Size = New System.Drawing.Size(596, 80)
-        Me.ucrBase.TabIndex = 5
+        Me.ucrBase.TabIndex = 6
         '
         'ucrInputFilePath
         '
         Me.ucrInputFilePath.AddQuotesIfUnrecognised = True
         Me.ucrInputFilePath.IsMultiline = False
         Me.ucrInputFilePath.IsReadOnly = False
-        Me.ucrInputFilePath.Location = New System.Drawing.Point(81, 28)
+        Me.ucrInputFilePath.Location = New System.Drawing.Point(66, 28)
         Me.ucrInputFilePath.Margin = New System.Windows.Forms.Padding(14, 18, 14, 18)
         Me.ucrInputFilePath.Name = "ucrInputFilePath"
         Me.ucrInputFilePath.Size = New System.Drawing.Size(395, 35)
         Me.ucrInputFilePath.TabIndex = 1
         '
+        'ucrChkSplitGeometry
+        '
+        Me.ucrChkSplitGeometry.Checked = False
+        Me.ucrChkSplitGeometry.Location = New System.Drawing.Point(10, 141)
+        Me.ucrChkSplitGeometry.Margin = New System.Windows.Forms.Padding(6, 8, 6, 8)
+        Me.ucrChkSplitGeometry.Name = "ucrChkSplitGeometry"
+        Me.ucrChkSplitGeometry.Size = New System.Drawing.Size(150, 31)
+        Me.ucrChkSplitGeometry.TabIndex = 7
+        '
         'dlgImportShapeFiles
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(634, 254)
+        Me.ClientSize = New System.Drawing.Size(627, 279)
+        Me.Controls.Add(Me.ucrChkSplitGeometry)
         Me.Controls.Add(Me.ucrSaveDataframeName)
         Me.Controls.Add(Me.cmdLibrary)
         Me.Controls.Add(Me.ucrBase)
@@ -116,4 +127,5 @@ Partial Class dlgImportShapeFiles
     Friend WithEvents ucrBase As ucrButtons
     Friend WithEvents cmdLibrary As Button
     Friend WithEvents ucrSaveDataframeName As ucrSave
+    Friend WithEvents ucrChkSplitGeometry As ucrCheck
 End Class
