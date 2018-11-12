@@ -66,16 +66,26 @@ Public Class sdgMapOption
     End Sub
 
     Private Sub CheckMinMaxValues()
-        'If ucrInputLongMin.GetValue() > ucrInputLongMax.GetValue() OrElse ucrInputLongMin.GetValue() > ucrInputLongMax.GetValue() Then
-        '    MsgBox("You can not have minimum longitude value greater or equal to maximum longitude", vbOKOnly, "Warning")
-        '    'TODO sould we disable return button??
-        'ElseIf ucrInputLatMin.GetValue() > ucrInputLatMax.GetValue() OrElse ucrInputLatMin.GetValue() > ucrInputLatMax.GetValue() Then
-        '    MsgBox("You can not have minimum latitude value greater or equal to maximum latitude", vbOKOnly, "Warning")
+        If Not ucrInputLongMin.IsEmpty AndAlso Not ucrInputLongMax.IsEmpty Then
 
-        'End If
+            If ucrInputLongMin.GetValue() > ucrInputLongMax.GetValue() Then
+                MsgBox("You can not have minimum longitude value greater or equal to maximum longitude", vbOKOnly, "Warning")
+                'TODO sould we disable return button??
+            End If
+        End If
+
+        If Not ucrInputLatMin.IsEmpty AndAlso Not ucrInputLatMax.IsEmpty Then
+
+                If ucrInputLatMin.GetValue() > ucrInputLatMax.GetValue() OrElse ucrInputLatMin.GetValue() > ucrInputLatMax.GetValue() Then
+                    MsgBox("You can not have minimum latitude value greater or equal to maximum latitude", vbOKOnly, "Warning")
+
+                End If
+            End If
+
+
     End Sub
     Private Sub ucrInputLatMax_ControlValueChanged(ucrChangedControl As ucrCore) Handles ucrInputLatMax.ControlValueChanged, ucrInputLongMax.ControlValueChanged, ucrInputLatMin.ControlValueChanged, ucrInputLongMin.ControlValueChanged
-        'CheckMinMaxValues()
+        CheckMinMaxValues()
         AddRemoveLimits()
     End Sub
 
